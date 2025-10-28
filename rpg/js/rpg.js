@@ -14,22 +14,24 @@ function seleccionarEspirituJugador() {
     let inputZephyr = document.getElementById('zephyr')
     let inputNimbus = document.getElementById('nimbus')
 
+    let spanEspirituJugador = document.getElementById('espiritu-jugador')
+
     if (inputSalamander.checked){
-        alert('Has seleccionado a Salamander!')
+        spanEspirituJugador.innerHTML = 'Salamander'
     } else if (inputUndine.checked){
-        alert('Has seleccionado a Undine!')
+        spanEspirituJugador.innerHTML = 'Undine'
     } else if (inputSylph.checked){
-        alert('Has seleccionado a Sylph!')
+        spanEspirituJugador.innerHTML = 'Sylph'
     } else if (inputGnome.checked){
-        alert('Has seleccionado a Gnome!')
+        spanEspirituJugador.innerHTML = 'Gnome'
     } else if (inputGaia.checked){
-        alert('Has seleccionado a Gaia!')
+        spanEspirituJugador.innerHTML = 'Gaia'
     } else if (inputMagma.checked){
-        alert('Has seleccionado a Magma!')
+        spanEspirituJugador.innerHTML = 'Magma'
     } else if (inputZephyr.checked){
-        alert('Has seleccionado a Zephyr!')
+        spanEspirituJugador.innerHTML = 'Zephyr'
     } else if (inputNimbus.checked){
-        alert('Has seleccionado a Nimbus!')
+        spanEspirituJugador.innerHTML = 'Nimbus'
     }else{
         alert('Selecciona un espíritu para continuar')
     }    
