@@ -3,7 +3,7 @@ function iniciarJuego() {
     botonMascota.addEventListener('click',  seleccionarEspirituJugador)
 }
 
-function seleccionarEspirituJugador() {
+function seleccionarEspirituJugador() { 
     let inputSalamander = document.getElementById
     ('salamander')
     let inputUndine = document.getElementById('undine')
@@ -34,10 +34,39 @@ function seleccionarEspirituJugador() {
         spanEspirituJugador.innerHTML = 'Nimbus'
     }else{
         alert('Selecciona un espíritu para continuar')
-    }    
-
+    }
+    
+    seleccionarEspirituEnemigo()
     
 }
+
+function seleccionarEspirituEnemigo(){
+    let numeroAleatorio = aleatorio(1,8)
+    let spanEspirituEnemigo = document.getElementById('espiritu-enemigo')
+
+    if (numeroAleatorio == 1){
+        spanEspirituEnemigo.innerHTML = 'Salamander'
+    } else if (numeroAleatorio == 2){
+        spanEspirituEnemigo.innerHTML = 'Undine'
+    } else if (numeroAleatorio == 3){
+        spanEspirituEnemigo.innerHTML = 'Sylph'
+    } else if (numeroAleatorio == 4){
+        spanEspirituEnemigo.innerHTML = 'Gnome'
+    } else if (numeroAleatorio == 5){
+        spanEspirituEnemigo.innerHTML = 'Gaia'
+    } else if (numeroAleatorio == 6){
+        spanEspirituEnemigo.innerHTML = 'Magma'
+    } else if (numeroAleatorio == 7){
+        spanEspirituEnemigo.innerHTML = 'Zephyr'
+    } else{
+        spanEspirituEnemigo.innerHTML = 'Nimbus'
+    }
+}
+
+function aleatorio(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 
 
 
