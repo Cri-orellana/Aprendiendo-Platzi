@@ -7,7 +7,7 @@ function iniciarJuego() {
 
     let ataqueFuego = document.getElementById('boton-fuego')
     let ataqueAgua = document.getElementById('boton-agua')
-    let ataqueAire = document.getElementById('boton-aire')
+    let ataqueAire = document.getElementById('boton-viento')
     let ataqueTierra = document.getElementById('boton-tierra')
 
     ataqueFuego.addEventListener('click', ataqueFuegoJugador)
@@ -79,25 +79,21 @@ function seleccionarEspirituEnemigo(){
 
 function ataqueFuegoJugador(){
     ataqueJugador = 'Fuego'
-    alert(ataqueJugador)
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAguaJugador(){
     ataqueJugador = 'Agua'
-    alert(ataqueJugador)
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAireJugador(){
     ataqueJugador = 'Aire'
-    alert(ataqueJugador)
     ataqueAleatorioEnemigo()
 }
 
 function ataqueTierraJugador(){
     ataqueJugador = 'Tierra'
-    alert(ataqueJugador)
     ataqueAleatorioEnemigo()
 }
 
@@ -113,7 +109,18 @@ function ataqueAleatorioEnemigo(){
     } else{
         ataqueEnemigo = 'Tierra'
     }
+
+    crearMensaje()
 }
+
+function crearMensaje(){
+    let textoMensaje = document.createElement('p')
+    textoMensaje.innerHTML = 'Tu espíritu atacó con ' + ataqueJugador + ', el espíritu enemigo atacó con ' + ataqueEnemigo + ' - '
+    let sectionMensajes = document.getElementById('mensajes')
+    sectionMensajes.appendChild(textoMensaje)
+    
+}
+
 
 function aleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
