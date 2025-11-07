@@ -1,6 +1,20 @@
+let ataqueJugador
+let ataqueEnemigo
+
 function iniciarJuego() {
     let botonMascota = document.getElementById('boton-espiritu')
     botonMascota.addEventListener('click',  seleccionarEspirituJugador)
+
+    let ataqueFuego = document.getElementById('boton-fuego')
+    let ataqueAgua = document.getElementById('boton-agua')
+    let ataqueAire = document.getElementById('boton-aire')
+    let ataqueTierra = document.getElementById('boton-tierra')
+
+    ataqueFuego.addEventListener('click', ataqueFuegoJugador)
+    ataqueAgua.addEventListener('click', ataqueAguaJugador)
+    ataqueAire.addEventListener('click', ataqueAireJugador)
+    ataqueTierra.addEventListener('click', ataqueTierraJugador)
+
 }
 
 function seleccionarEspirituJugador() { 
@@ -60,6 +74,44 @@ function seleccionarEspirituEnemigo(){
         spanEspirituEnemigo.innerHTML = 'Zephyr'
     } else{
         spanEspirituEnemigo.innerHTML = 'Nimbus'
+    }
+}
+
+function ataqueFuegoJugador(){
+    ataqueJugador = 'Fuego'
+    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAguaJugador(){
+    ataqueJugador = 'Agua'
+    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAireJugador(){
+    ataqueJugador = 'Aire'
+    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueTierraJugador(){
+    ataqueJugador = 'Tierra'
+    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAleatorioEnemigo(){
+    ataqueEnemigo = aleatorio(1,4)
+
+    if (ataqueEnemigo == 1){
+        ataqueEnemigo = 'Fuego'
+    } else if (ataqueEnemigo == 2){
+        ataqueEnemigo = 'Agua'
+    } else if (ataqueEnemigo == 3){
+        ataqueEnemigo = 'Aire'
+    } else{
+        ataqueEnemigo = 'Tierra'
     }
 }
 
