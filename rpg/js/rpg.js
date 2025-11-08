@@ -110,17 +110,31 @@ function ataqueAleatorioEnemigo(){
         ataqueEnemigo = 'Tierra'
     }
 
-    crearMensaje()
+    resultadoCombate()
+}
+function resultadoCombate(){
+    if (ataqueJugador == ataqueEnemigo){
+        crearMensaje('Empate!')
+    } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Aire'){
+        crearMensaje('Ganaste!')
+    } else if (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
+        crearMensaje('Ganaste!')
+    } else if (ataqueJugador == 'Aire' && ataqueEnemigo == 'Tierra'){
+        crearMensaje('Ganaste!')
+    } else if (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
+        crearMensaje('Ganaste!')
+    } else{
+        crearMensaje('Perdiste')
+    }
 }
 
-function crearMensaje(){
+function crearMensaje(resultado){
     let textoMensaje = document.createElement('p')
-    textoMensaje.innerHTML = 'Tu espíritu atacó con ' + ataqueJugador + ', el espíritu enemigo atacó con ' + ataqueEnemigo + ' - '
+    textoMensaje.innerHTML = 'Tu espíritu atacó con ' + ataqueJugador + ', el espíritu enemigo atacó con ' + ataqueEnemigo + ' : ' + resultado
     let sectionMensajes = document.getElementById('mensajes')
     sectionMensajes.appendChild(textoMensaje)
     
 }
-
 
 function aleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
